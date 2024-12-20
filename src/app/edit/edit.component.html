@@ -1,0 +1,36 @@
+<!-- <p>edit works!</p>
+<button class="btn-btn primary" (click)="OnSave()">Download</button>
+<app-comp [url]="compUrl" (importDone)="handleImported($event)"></app-comp> -->
+<!-- <h2>File List</h2> -->
+<!-- <button (click)="getFileList()">Get Files</button>//comp/ -->
+<!-- <ul *ngIf="fileList">
+  <li *ngFor="let file of fileList">
+    <th scope="row">{{file.name }}</th>
+    <td><a href="{{ file.url }}">download</a></td>
+    <td>{{ file.id }}</td>
+    <td><button [routerLink]="['/comp', file.id ]">edit diagram</button></td>
+  </li>
+</ul> -->
+<!-- <ul *ngIf="fileList" class="file-list">
+  <li *ngFor="let file of fileList" class="file-item">
+    <div class="file-name">{{ file.name }}</div>
+    <div class="file-actions">
+      <a href="{{ file.url }}" class="file-download">Download</a>
+      <button [routerLink]="['/comp', file.id]" class="file-edit">Edit Diagram</button>
+    </div>
+  </li>
+</ul> -->
+<h2 class="file-list-heading">File List</h2>
+
+<ul *ngIf="fileList" class="file-list">
+  <li *ngFor="let file of fileList" class="file-item">
+    <div class="file-info">
+      <div class="file-name">{{ file.name }}</div>
+    </div>
+    <div class="file-actions">
+      <a href="{{ file.url }}" class="file-download">Download</a>
+      <button [routerLink]="['/comp', file.id]" class="file-edit">Edit Diagram</button>
+      <button class="btn btn-success" (click)="deleteXML(file.id)">DELETE</button>
+    </div>
+  </li>
+</ul>
